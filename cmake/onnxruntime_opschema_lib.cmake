@@ -31,6 +31,6 @@ set (OPSCHEMA_LIB_DEPENDENCIES onnx onnx_proto ${PROTOBUF_LIB} flatbuffers safei
 
 # ${CMAKE_CURRENT_BINARY_DIR} is so that #include "onnxruntime_config.h" is found
 target_include_directories(ort_opschema_lib PRIVATE ${ONNXRUNTIME_ROOT} ${ORTTRAINING_ROOT} ${CMAKE_CURRENT_BINARY_DIR})
-onnxruntime_add_include_to_target(ort_opschema_lib onnxruntime_common onnx onnx_proto protobuf::libprotobuf flatbuffers)
+onnxruntime_add_include_to_target(ort_opschema_lib onnxruntime_common onnx onnx_proto protobuf::libprotobuf flatbuffers Boost::mp11)
 add_dependencies(ort_opschema_lib ${OPSCHEMA_LIB_DEPENDENCIES})
 
